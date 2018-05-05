@@ -43,3 +43,6 @@ buildNumber.properties
 /eureka-consumer-feign/eureka-consumer-feign.iml
 /eureka-consumer/eureka-consumer.iml
 /eureka-client/eureka-client.iml
+/config-server/config-server.iml
+/.idea/
+/config-client/config-client.iml
