@@ -1,13 +1,18 @@
 spring:
-  application:
-    name: config-client
   cloud:
     config:
-      uri: http://localhost:1201/
+#      uri: http://localhost:1201/ 使用了注册中心，就不要指定ip了
       profile: dev
       label: master
+      name: config-client #要获取的文件名
+      discovery:
+        enabled: true
+        service-id: config-server #指定server端的name,也就是server端spring.application.name的值
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/
 
-#  spring.application.name：对应配置文件规则中的{application}部分
 #  spring.cloud.config.profile：对应配置文件规则中的{profile}部分
 #  spring.cloud.config.label：对应配置文件规则中的{label}部分
 #  spring.cloud.config.uri：配置中心config-server的地址

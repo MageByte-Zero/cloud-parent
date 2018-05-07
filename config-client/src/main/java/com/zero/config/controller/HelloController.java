@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 class HelloController {
+    /**
+     * 读取配置中心的配置
+     */
     @Value("${info.profile}")
     private String test;
 
