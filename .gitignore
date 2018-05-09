@@ -47,9 +47,4 @@ buildNumber.properties
 /.idea/
 /config-client/config-client.iml
 /eureka-consumer-feign-hystrix/eureka-consumer-feign.iml
-config-client/src/test/
-config-server/src/test/
-eureka-client/src/test/
-eureka-consumer-ribbon/src/test/
-eureka-consumer/src/test/
-eureka-server/src/test/
+*.iml
