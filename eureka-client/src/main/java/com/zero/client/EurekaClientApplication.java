@@ -10,7 +10,6 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @SpringBootApplication
 public class EurekaClientApplication {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(EurekaClientApplication.class)
-                .web(true).run(args);
+        new SpringApplicationBuilder(EurekaClientApplication.class).run(args);
     }
 }

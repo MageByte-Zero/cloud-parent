@@ -1,6 +1,6 @@
 package com.zero.consumer.controller;
 
-import com.zero.consumer.remote.UserService;
+import com.zero.consumer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +16,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/users")
-    public String dc() {
+    public String listUser() {
         return userService.listUser();
     }
 }

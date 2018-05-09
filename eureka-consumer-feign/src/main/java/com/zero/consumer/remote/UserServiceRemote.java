@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @date 2018/5/3
  */
 @FeignClient("eureka-client")
-public interface UserService {
+public interface UserServiceRemote {
     @GetMapping("/users")
     String listUser();
 }
