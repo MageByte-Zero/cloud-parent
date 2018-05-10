@@ -3,3 +3,6 @@ spring:
     name: config-client
 server:
   port: 2001
+management:
+  security:
+    enabled: false
