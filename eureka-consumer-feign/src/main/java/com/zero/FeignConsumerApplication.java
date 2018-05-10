@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * @EnableHystrix 开启Hystrix
  * @EnableDiscoveryClient 将当前应用加入到服务治理体系中
- * @EnableFeignClients注解开启扫描Spring Cloud Feign客户端的功能
+ * @EnableFeignClients 注解开启扫描Spring Cloud Feign客户端的功能
  */
 @EnableHystrix
 @EnableFeignClients

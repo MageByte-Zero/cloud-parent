@@ -17,6 +17,7 @@
         <module>config-client</module>
         <module>hystrix-dashboard</module>
         <module>turbine</module>
+        <module>hystrix-dashboard-turbine</module>
     </modules>
     <packaging>pom</packaging>
 
