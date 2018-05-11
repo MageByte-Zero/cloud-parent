@@ -7,3 +7,13 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:1001/eureka/
+## zuul.routes.<route>.path与zuul.routes.<route>.serviceId
+# 该配置实现了对符合/user-service/**规则的请求路径转发到eureka-consumer-feign命名的服务上
+zuul:
+  routes:
+    user-service:
+      path: /user-service/**
+      serviceId: eureka-consumer-feign
+    dc-service:
+      path: /dc-service/**
+      serviceId: eureka-client

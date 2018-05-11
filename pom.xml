@@ -19,6 +19,7 @@
         <module>turbine</module>
         <module>hystrix-dashboard-turbine</module>
         <module>api-gateway</module>
+        <module>common-lib</module>
     </modules>
     <packaging>pom</packaging>
 
