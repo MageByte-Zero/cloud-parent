@@ -20,6 +20,7 @@
         <module>hystrix-dashboard-turbine</module>
         <module>api-gateway</module>
         <module>common-lib</module>
+        <module>cloud-stream</module>
     </modules>
     <packaging>pom</packaging>
 
