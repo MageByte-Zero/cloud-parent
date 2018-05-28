@@ -33,7 +33,6 @@ public class UserServiceImpl implements UserService {
         userInfo.setFirstName("健青");
         userInfo.setLastName("李");
         userInfo.setId(id);
-        int i = 1 / 0;
         return userInfo;
     }
 }

@@ -21,6 +21,7 @@
         <module>api-gateway</module>
         <module>common-lib</module>
         <module>cloud-stream</module>
+        <module>zipkin-server</module>
     </modules>
     <packaging>pom</packaging>
 
