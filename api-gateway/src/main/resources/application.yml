@@ -4,8 +4,18 @@ spring:
   sleuth:
     sampler:
       percentage: 1.0
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: cloud
+    password: 123456
+    virtual-host: cloud
   zipkin:
-    base-url: http://localhost:9411
+    rabbitmq:
+      queue: zipkin
+#    换成rabbitMQ发送跟踪信息
+#  zipkin:
+#    base-url: http://localhost:9411
 server:
   port: 1101
 eureka:
