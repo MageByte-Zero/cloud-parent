@@ -72,14 +72,20 @@
         </dependency>
 
         <!--分布式服务跟踪-->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
-        </dependency>
+        </dependency>-->
         <!--zipkin整合，将sleuth跟踪信息输出到Zipkin Server,http直连zipkin方式-->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+        </dependency>-->
+
+        <!--已经包含spring-cloud-starter-sleuth、spring-cloud-sleuth-zipkin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
 
         <dependency>
