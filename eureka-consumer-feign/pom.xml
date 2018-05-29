@@ -76,7 +76,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
-        <!--zipkin整合，将sleuth跟踪信息输出到Zipkin Server-->
+        <!--zipkin整合，将sleuth跟踪信息输出到Zipkin Server,http直连zipkin方式-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-sleuth-zipkin</artifactId>
