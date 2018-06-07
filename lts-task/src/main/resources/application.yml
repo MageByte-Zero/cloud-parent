@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: lts-task
+server:
+  port: 2101
+
+#LTS分布式任务调度配置
+lts:
+  # jobTracker配置
+  jobtracker:
+    cluster-name: cloud-task-cluster
+    registry-address: redis://127.0.0.1:6379
+    listen-port: 35001
+    configs:
+      job:
+        logger: mysql
+        queue: mysql
+      jdbc:
+        url: jdbc:mysql://127.0.0.1:3306/lts
+        username: root
+        password: 123456
+  # lts-tasktracker
+  tasktracker:
+    cluster-name: cloud-task-cluster
+    registry-address: redis://127.0.0.1:6379
+    node-group: cloud-taskTracker
+    configs:
+      job:
+        fail:
+          store: mapdb
+  # lts - jobclient
+  jobclient:
+    cluster-name: cloud-task-cluster
+    registry-address: redis://127.0.0.1:6379
+    node-group: cloud-jobClient
+    use-retry-client: true
+    configs:
+      job:
+        fail:
+          store: mapdb

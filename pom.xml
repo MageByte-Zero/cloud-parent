@@ -22,9 +22,13 @@
         <module>common-lib</module>
         <module>cloud-stream</module>
         <module>zipkin-server</module>
+        <module>lts-task</module>
     </modules>
     <packaging>pom</packaging>
 
+    <properties>
+        <lts.version>1.7.0</lts.version>
+    </properties>
 
     <profiles>
         <profile>

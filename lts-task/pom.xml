@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud-parent</artifactId>
+        <groupId>com.zero.cloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>lts-task</artifactId>
+    <packaging>jar</packaging>
+    <description>LTS分布式任务调度TaskTracker节点</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.zero.cloud</groupId>
+            <artifactId>common-lib</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <!--LTS分布式任务调度-->
+        <dependency>
+            <groupId>com.github.ltsopensource</groupId>
+            <artifactId>lts</artifactId>
+            <version>${lts.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ltsopensource</groupId>
+            <artifactId>lts-core</artifactId>
+            <version>${lts.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ltsopensource</groupId>
+            <artifactId>lts-jobtracker</artifactId>
+            <version>${lts.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ltsopensource</groupId>
+            <artifactId>lts-jobclient</artifactId>
+            <version>${lts.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ltsopensource</groupId>
+            <artifactId>lts-tasktracker</artifactId>
+            <version>${lts.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.0.20.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapdb</groupId>
+            <artifactId>mapdb</artifactId>
+            <version>2.0-beta10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.14</version>
+        </dependency>
+    </dependencies>
+
+
+</project>
