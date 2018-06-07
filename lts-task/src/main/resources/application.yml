@@ -16,7 +16,7 @@ lts:
         logger: mysql
         queue: mysql
       jdbc:
-        url: jdbc:mysql://127.0.0.1:3306/lts
+        url: jdbc:mysql://127.0.0.1:3306/lts?characterEncoding=utf8&useSSL=false
         username: root
         password: 123456
   # lts-tasktracker
