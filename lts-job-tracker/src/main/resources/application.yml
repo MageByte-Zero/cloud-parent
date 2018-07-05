@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: lts-job-tracker
+server:
+  port: 2107
+
+#LTS分布式任务调度配置
+lts:
+  # jobTracker配置
+  jobtracker:
+    cluster-name: cloud-task-cluster
+    registry-address: redis://10.2.1.31:6379
+    listen-port: 35001
+    configs:
+      job:
+        logger: mysql
+        queue: mysql
+      jdbc:
+        url: jdbc:mysql://127.0.0.1:3306/lts?characterEncoding=utf8&useSSL=false
+        username: root
+        password: 123456

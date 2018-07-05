@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <contextName>lts-job-tracker</contextName>
+
+    <!-- 修改一下路径-->
+    <property name="PATH" value="/data/server/logs/admin"></property>
+    <property name="totalSizeCap" value="1GB"></property>
+    <property name="maxHistory" value="30"></property>
+    <property name="maxFileSize" value="10MB"></property>
+    <property name="sto_pattern"
+              value="%red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger) - %cyan(%msg%n)"></property>
+    <property name="file_pattern"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"></property>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>${sto_pattern}</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${PATH}/info.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${PATH}/info.%d{yyyy-MM-dd}.%i.log.zip</FileNamePattern>
+            <!-- 如果按天来回滚，则最大保存时间为365天，365天之前的都将被清理掉 -->
+            <maxHistory>${maxHistory}</maxHistory>
+            <!-- 日志总保存量为1GB -->
+            <totalSizeCap>${totalSizeCap}</totalSizeCap>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!--文件达到 最大X MB时会被压缩和切割 -->
+                <maxFileSize>${maxFileSize}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <layout>
+            <pattern>${file_pattern}</pattern>
+        </layout>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+    </appender>
+
+    <appender name="WARN_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${PATH}/warn.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${PATH}/warn.%d{yyyy-MM-dd}.%i.log.zip</FileNamePattern>
+            <!-- 如果按天来回滚，则最大保存时间为365天，365天之前的都将被清理掉 -->
+            <maxHistory>${maxHistory}</maxHistory>
+            <!-- 日志总保存量为1GB -->
+            <totalSizeCap>${totalSizeCap}</totalSizeCap>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!--文件达到 最大X MB时会被压缩和切割 -->
+                <maxFileSize>${maxFileSize}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <layout>
+            <pattern>${file_pattern}</pattern>
+        </layout>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${PATH}/error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${PATH}/error.%d{yyyy-MM-dd}.%i.log.zip</FileNamePattern>
+            <!-- 如果按天来回滚，则最大保存时间为365天，365天之前的都将被清理掉 -->
+            <maxHistory>${maxHistory}</maxHistory>
+            <!-- 日志总保存量为1GB -->
+            <totalSizeCap>${totalSizeCap}</totalSizeCap>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!--文件达到 最大X MB时会被压缩和切割 -->
+                <maxFileSize>${maxFileSize}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <layout>
+            <pattern>${file_pattern}</pattern>
+        </layout>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+
+    <!--myibatis log configure-->
+    <logger name="com.mall.admin.mapper" level="debug" additivity="false">
+        <appender-ref ref="INFO_FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <!--<appender-ref ref="DEBUG_FILE"/>-->
+        <appender-ref ref="INFO_FILE"/>
+        <appender-ref ref="WARN_FILE"/>
+        <appender-ref ref="ERROR_FILE"/>
+    </root>
+</configuration>

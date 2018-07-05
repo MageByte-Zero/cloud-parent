@@ -23,6 +23,7 @@
         <module>cloud-stream</module>
         <module>zipkin-server</module>
         <module>lts-task</module>
+        <module>lts-job-tracker</module>
     </modules>
     <packaging>pom</packaging>
 
