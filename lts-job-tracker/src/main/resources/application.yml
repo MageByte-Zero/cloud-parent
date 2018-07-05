@@ -9,7 +9,7 @@ lts:
   # jobTracker配置
   jobtracker:
     cluster-name: cloud-task-cluster
-    registry-address: redis://10.2.1.31:6379
+    registry-address: redis://127.0.0.1:6379
     listen-port: 35001
     configs:
       job:
